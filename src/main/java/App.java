@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -19,11 +21,12 @@ public class App {
                 default -> logAction("search : " + searchTerm);
             }
 
-            } while (!searchTerm.equalsIgnoreCase("X"));
+        } while (!searchTerm.equalsIgnoreCase("X"));
 
-            logAction("exit");
+        logAction("exit");
 
     }
+
     public static void logAction(String action) {
 
         LocalDateTime currentDate = LocalDateTime.now();
@@ -31,10 +34,21 @@ public class App {
         String formattedDate = currentDate.format(
                 DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
+        try {
+            FileWriter writer = new FileWriter("logs.txt", true);
 
+            // Write each action with a timestamp
+            writer.write(formattedDate + " " + action + "\n");
+
+            writer.close();
+
+        } catch (IOException e) {
+//            throw new RuntimeException(e);
+        }
 
 
     }
+}
 
 
 
