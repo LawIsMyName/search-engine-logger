@@ -10,6 +10,8 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         String searchTerm;
 
+        logAction("launch");
+
         do {
             System.out.println("Eneter a search term (X or x to exit): ");
             searchTerm = scanner.nextLine();
