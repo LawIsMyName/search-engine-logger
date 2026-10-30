@@ -22,9 +22,10 @@ public class App {
             logAction("exit");
 
     }
+    public static void logAction(String action) {
 
 
-}
+    }
 
 
 
