@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
@@ -9,6 +10,13 @@ public class App {
         do {
             System.out.println("Eneter a search term (X or x to exit): ");
             searchTerm = scanner.nextLine();
+
+            switch (searchTerm.toUpperCase()){
+                case "X" -> System.out.println("Goodbye!");
+
+                default -> logAction("search : " + searchTerm);
+
+            }
 
 
         }
