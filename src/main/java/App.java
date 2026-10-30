@@ -11,16 +11,20 @@ public class App {
             System.out.println("Eneter a search term (X or x to exit): ");
             searchTerm = scanner.nextLine();
 
-            switch (searchTerm.toUpperCase()){
+            switch (searchTerm.toUpperCase()) {
                 case "X" -> System.out.println("Goodbye!");
 
                 default -> logAction("search : " + searchTerm);
-
             }
 
+            } while (!searchTerm.equalsIgnoreCase("X"));
 
-        }
+            logAction("exit");
+
     }
 
 
 }
+
+
+
