@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -23,6 +25,13 @@ public class App {
 
     }
     public static void logAction(String action) {
+
+        LocalDateTime currentDate = LocalDateTime.now();
+
+        String formattedDate = currentDate.format(
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+
+
 
 
     }
