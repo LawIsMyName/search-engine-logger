@@ -13,7 +13,7 @@ public class App {
         logAction("launch");
 
         do {
-            System.out.println("Eneter a search term (X or x to exit): ");
+            System.out.println("Enter a search term (X or x to exit): ");
             searchTerm = scanner.nextLine();
 
             switch (searchTerm.toUpperCase()) {
